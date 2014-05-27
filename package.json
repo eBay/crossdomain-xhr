@@ -1,0 +1,41 @@
+{
+  "name": "crossdomain-xhr",
+  "version": "0.1.0",
+  "description": "Cross Domain XHR",
+  "author": {
+    "name": "Ramesh Mahadevan",
+    "email": "ramahadevan@ebay.com"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-contrib-watch": "~0.4.0",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt": "~0.4.1",
+    "grunt-browserify": "~1.0.0",
+    "jasmine-node": "~1.7.0",
+    "grunt-contrib-jasmine": "~0.4.2",
+    "grunt-cli": "~0.1.8",
+    "grunt-jasmine-node": "~0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.scm.corp.ebay.com/ramahadevan/crossdomain-xhr.git"
+  },
+  "keywords": [
+    "xhr",
+    "crossdomain",
+    "xhr",
+    "cors",
+    "postmessage",
+    "iframe"
+  ],
+  "license": "BSD-2-Clause"
+}
