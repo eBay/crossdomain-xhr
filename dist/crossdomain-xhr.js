@@ -90,11 +90,10 @@
             if(allowedOrigins === null || allowedOrigins.length ===0){
                 return {"*" : "All"};
             }else{
-                var max = allowedOrigins.split(",");
-                var originList = allowedOrigins.split(",");
+                var max = allowedOrigins.length;
                 var kvp = {};
-                for(var i=0; i<originList.length;i ++){
-                    kvp[originList[i]] = originList[i];
+                for(var i=0; i<max;i ++){
+                    kvp[allowedOrigins[i]] = allowedOrigins[i];
                 }
                 return kvp;
             }
@@ -118,6 +117,7 @@
             }
             return "cors-polyfill";
         }
+
     }
 }).call(this, window.cXHR);;(function($cXHR) {
     "use strict";
