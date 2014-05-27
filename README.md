@@ -48,7 +48,9 @@ function onError(status, errorResponse, xhr){
 
 }
 
+
 ```
+
 <a id="input"></a>
 #### [Input](#input)
 
@@ -59,10 +61,24 @@ function onError(status, errorResponse, xhr){
 | onSuccess     | `Callback Function`   | A callback function executes onSuccessful Ajax request.
 | onError       | `Callback Function`   | A callback function executes when ajax request errors.
 
+
+### [More Examples](https://github.scm.corp.ebay.com/pages/ramahadevan/crossdomain-xhr/)
+
+
 ===
 
-### Browser Support
-* [CORS Browser Support](http://caniuse.com/#search=cors)
-* [PostMessage Support](http://caniuse.com/#search=postmessage)
+
+### Browser Distribution
+
+>#### CORS *IE 10+
+ ![CORS Supported Browsers](https://raw.githubusercontent.com/alrra/browser-logos/master/main-desktop.png "Cors Supported across all modern browsers, IE only from 10 and above.")
+
+>#### PostMessage *IE 8+
+ ![PostMessage Supported Browsers](https://raw.githubusercontent.com/alrra/browser-logos/master/main-desktop.png "Cors Supported across all modern browsers, IE only from 8 and above.")
+
+**[Browser icons proudly stolen from https://github.com/alrra/browser-logos](https://github.com/alrra/browser-logos)
 
 
+### Contribution
+
+Pull Requests are welcome. Please submit Github issues for any feature enhancements, bugs or documentation problems.
