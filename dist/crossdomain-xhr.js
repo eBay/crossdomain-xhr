@@ -86,7 +86,12 @@
             return getConfig(key);
         },
         getAllowedOrigins: function(){
-            var allowedOrigins = this.getByKey(_cXHRConfigKeys.allowedOrigins);
+            var allowedOrigins = null;
+
+            if(typeof this.getByKey(_cXHRConfigKeys.allowedOrigins) !== "undefined" && this.getByKey(_cXHRConfigKeys.allowedOrigins) != null ){
+                allowedOrigins = this.getByKey(_cXHRConfigKeys.allowedOrigins).split(",");
+            }
+
             if(allowedOrigins === null || allowedOrigins.length ===0){
                 return {"*" : "All"};
             }else{
@@ -147,7 +152,7 @@
             contentConfig.context.appendChild(contentConfig.client);
 
             loadTimeoutId = window.setTimeout(function() {
-                ebay.contentLoader.abort();
+                $cXHR.contentLoader.abort();
             }, contentConfig.timeout);
 
             bindEvent(contentConfig.client, "onload", function() {
@@ -178,7 +183,7 @@
             }
         }
     }
-}).call(this, window.cXHR);;(function(cXHR) {
+}).call(this, window.cXHR);;(function($win, cXHR) {
     "use strict";
 
     var _urlSchemes = {
@@ -271,7 +276,7 @@
         }
     };
 
-}).call(this, window.cXHR);;(function($cXHR) {
+}).call(this,window, window.cXHR);;(function($cXHR) {
     "use strict";
 
     var listeners = {};

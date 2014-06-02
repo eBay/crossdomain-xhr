@@ -54,6 +54,14 @@ describe('ebay.urlhelper', function() {
      });
 });
 
+describe('ebay.urlhelper.issamedomain', function() {
+     it('Is url sameorigin Request', function() {
+         var expected = false;
+         var actual = window.cXHR.http.request.isCrossDomain("http://ramahadevan.github.io/crossdomain-xhr/demo.html", "http://ramahadevan.github.io/crossdomain-xhr/demo.html");
+         expect(expected).toBe(actual);
+     });
+});
+
 describe('message-listener', function() {
     it('Message Listener Exists', function() {
         expect(window.cXHR.messagelistener).not.toBeNull();
@@ -122,6 +130,8 @@ describe('cXHR-Config', function() {
 
         var allowedOrigins = window.cXHR.config.getByKey('allowedOrigins');
         var allowedDomains = window.cXHR.config.getAllowedOrigins();
+        console.info(allowedOrigins.split(",").length);
+        console.info(allowedDomains);
         var expectedLength =  2;
 
         expect(allowedOrigins).not.toBeNull();
