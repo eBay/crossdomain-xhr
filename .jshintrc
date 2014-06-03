@@ -6,8 +6,8 @@
     "newcap": true,
     "noarg": true,
     "sub": true,
-    "undef": true,
-    "unused": true,
+    "undef": false,
+    "unused": false,
     "boss": true,
     "eqnull": true,
     "node": true,
@@ -38,7 +38,6 @@
         "afterEach"  : false,
         "expect"     : false,
         "spyOn"      : false,
-
         "define": false,
         "requirejs": false,
         "require": false

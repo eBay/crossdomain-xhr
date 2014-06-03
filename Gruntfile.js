@@ -25,8 +25,9 @@ module.exports = function (grunt) {
             projectRoot: "test/spec",
             forceExit: true,
         },
+
         jshint: {
-            all: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+            all: ['Gruntfile.js', 'lib/**/*.js', 'test/**/*.js'],
             options: {
                 jshintrc: '.jshintrc',
             }
@@ -103,7 +104,7 @@ module.exports = function (grunt) {
 
 
     // Default task.
-    grunt.registerTask('default', ['jshint', 'jasmine_node', 'browserify', 'jasmine', 'concat', 'uglify']);
+    grunt.registerTask('default', ['jshint','jasmine', 'concat', 'uglify']);
 
     grunt.registerTask('bytecodeit', ['concat', 'uglify']);
     grunt.registerTask('testit', ['bytecodeit', 'jasmine']);

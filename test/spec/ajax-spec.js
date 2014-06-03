@@ -76,9 +76,6 @@ describe('message-listener', function() {
         });
         var listener = messageListener.all.hasOwnProperty(123);
         expect(listener).not.toBeNull();
-
-        var listened = messageListener.all[123]();
-        expect("hello world!!!").toBe("hello world!!!");
     });
 });
 
@@ -92,7 +89,7 @@ describe('sifr-messenger', function() {
 
     it("PostMessageData Should Exist", function(){
         expect(window.cXHR.postMessageData).not.toBeNull();
-    })
+    });
 
     it("PostMessageData Should Match", function(){
         var now = Date.now();
@@ -100,7 +97,7 @@ describe('sifr-messenger', function() {
         var expected = now;
         var actual = postMessageData.messageId;
         expect(expected).toBe(actual);
-    })
+    });
 
     it("SIFR Should Exist", function(){
         expect(window.cXHR.sifr).not.toBeNull();
@@ -130,8 +127,6 @@ describe('cXHR-Config', function() {
 
         var allowedOrigins = window.cXHR.config.getByKey('allowedOrigins');
         var allowedDomains = window.cXHR.config.getAllowedOrigins();
-        console.info(allowedOrigins.split(",").length);
-        console.info(allowedDomains);
         var expectedLength =  2;
 
         expect(allowedOrigins).not.toBeNull();

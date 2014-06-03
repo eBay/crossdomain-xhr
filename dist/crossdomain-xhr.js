@@ -123,7 +123,7 @@
             return "cors-polyfill";
         }
 
-    }
+    };
 }).call(this, window.cXHR);;(function($cXHR) {
     "use strict";
     var __defaultTimeoutInMs = 200;
@@ -182,7 +182,7 @@
                 document.execCommand('Stop');
             }
         }
-    }
+    };
 }).call(this, window.cXHR);;(function($win, cXHR) {
     "use strict";
 
@@ -296,12 +296,11 @@
         },
         all: listeners
     };
-}).call(this, window.cXHR);;;
-(function($cXHR) {
+}).call(this, window.cXHR);;(function($cXHR) {
     cXHR.postMessageData = function(messageId, message){
         this.messageId = messageId;
         this.data = message;
-    }
+    };
 }).call(this, window.cXHR);
 
 ;(function($cXHR) {
@@ -369,10 +368,16 @@
             $client.style.height = "0px";
             var sifrUrl = this.targetUrl;
             if (typeof _contentLoader !== "undefined") {
-                _contentLoader.load(this.client, 500, document.body, function() {
+
+                if(!this.isReady){
+                    _contentLoader.load(this.client, 500, document.body, function() {
+                        memoizeSifr($client, sifrUrl);
+                        postMessage($client, messageDataRaw);
+                    });
+                }else{
                     memoizeSifr($client, sifrUrl);
                     postMessage($client, messageDataRaw);
-                });
+                }
             }
         },
         receive: function(message) {
@@ -584,7 +589,7 @@
             statusText: actualXhr.statusText,
             allResponseHeaders: responseHeaders,
             getAllResponseHeaders: function() {
-                return allResponseHeaders;
+                return responseHeaders;
             }
         };
         return xhrResponse;
