@@ -22,6 +22,11 @@ crossdomain-xhr
 
 * <a download="crossdomain-xhr.js" href="/dist/crossdomain-xhr.js">Full library </a>
 
+* Get it from Bower
+```javascript
+bower install -g crossdomain-xhr
+
+```
 ===
 
 ### Usage
