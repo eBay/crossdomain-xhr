@@ -28,7 +28,7 @@
     }
 
     function isXhrEnabled() {
-        return typeof XMLHttpRequest === "function";
+        return 'XMLHttpRequest' in window;
     }
 
     function isCorsEnabled(isXhrEnabled) {
@@ -46,7 +46,8 @@
             return detectFeatures();
         }
     };
-}).call(this, window.cXHR);;(function($cXHR) {
+}).call(this, window.cXHR);
+;(function($cXHR) {
     "use strict";
     var _cXHRConfigKeys = {
         useCORSPolyfill: 'useCORSPolyfill',
